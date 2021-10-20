@@ -4,15 +4,7 @@ import java.util.Scanner;
 
 public class Array {
     public static void main(String[] args) {
-        /*
-        2. Создайте класс Array в пакете hw3.
-        Программа должна позволить пользователю ввести одномерный массив целых чисел размерностью 10 элементов.
-        Вывести на экран введенный массив.
-        Подсчитать сумму всех элементов массива и вывести ее на экран.
-        Подсчитать и вывести на экран количество положительных элементов.
-        Произвести сортировку этого массива от меньшего к большему по алгоритму сортировки пузырьком. (https://en.wikipedia.org/wiki/Bubble_sort)
-        Вывести на экран отсортированный массив.
-         */
+
         Scanner scan = new Scanner(System.in);
         int[] array = new int[10];
         int allSum = 0;
@@ -25,6 +17,10 @@ public class Array {
             allSum += array[i];
             allPositive += array[i] > 0 ? 1 : 0;
         }
+        System.out.println("Введенный массив:");
+        for (int j : array) {
+            System.out.print(j + " | ");
+        }
         //пузырек
         for(int i = 0; i < array.length; i++ ){
             for(int j = 0; j < array.length; j++){
@@ -36,7 +32,7 @@ public class Array {
             }
         }
 
-        System.out.println("Сумма всех элементов массива = " + allSum);
+        System.out.println("\nСумма всех элементов массива = " + allSum);
         System.out.println("Количество положительных чисел в массиве = " + allPositive);
 
         System.out.println("Отсортированный массив:");
