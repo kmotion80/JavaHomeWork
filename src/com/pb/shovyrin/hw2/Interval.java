@@ -10,7 +10,7 @@ public class Interval {
         System.out.println("Введите любое число");
         x = in.nextInt();
 
-        if(x > 100){
+        if(x > 100 || x < 0){
             System.out.println("Число не входит в промежуток");
         }else if(x >= 51){
             System.out.println("Число входит в промежуток [51 - 100]");
