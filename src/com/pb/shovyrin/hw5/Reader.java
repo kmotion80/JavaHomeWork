@@ -1,11 +1,14 @@
 package com.pb.shovyrin.hw5;
 
+import java.util.ArrayList;
+
 public class Reader {
     private String fio;
     private String readerNumber;
     private String fakultet;
     private String birthDay;
     private String phoneNumber;
+    private ArrayList<Book> arrayTakeBook;
 
     public String getReaderNumber() {
         return readerNumber;
