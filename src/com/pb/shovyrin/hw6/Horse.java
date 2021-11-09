@@ -14,19 +14,23 @@ public class Horse extends Animal {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Horse horse = (Horse) o;
         return temperature == horse.temperature && Objects.equals(walkType, horse.walkType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(walkType, temperature);
+        return Objects.hash(super.hashCode(), walkType, temperature);
     }
 
     @Override
     public String toString() {
         return "Horse{" +
-                "walkType='" + walkType + '\'' +
+                "animalName='" + animalName + '\'' +
+                ", food='" + food + '\'' +
+                ", location='" + location + '\'' +
+                ", walkType='" + walkType + '\'' +
                 ", temperature=" + temperature +
                 '}';
     }

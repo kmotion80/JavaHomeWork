@@ -14,19 +14,23 @@ public class Cat extends Animal {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Cat cat = (Cat) o;
         return temperature == cat.temperature && Objects.equals(walkType, cat.walkType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(walkType, temperature);
+        return Objects.hash(super.hashCode(), walkType, temperature);
     }
 
     @Override
     public String toString() {
         return "Cat{" +
-                "walkType='" + walkType + '\'' +
+                "animalName='" + animalName + '\'' +
+                ", food='" + food + '\'' +
+                ", location='" + location + '\'' +
+                ", walkType='" + walkType + '\'' +
                 ", temperature=" + temperature +
                 '}';
     }

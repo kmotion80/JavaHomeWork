@@ -17,19 +17,23 @@ public class Dog extends Animal {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Dog dog = (Dog) o;
         return temperature == dog.temperature && Objects.equals(walkType, dog.walkType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(walkType, temperature);
+        return Objects.hash(super.hashCode(), walkType, temperature);
     }
 
     @Override
     public String toString() {
         return "Dog{" +
-                "walkType='" + walkType + '\'' +
+                "animalName='" + animalName + '\'' +
+                ", food='" + food + '\'' +
+                ", location='" + location + '\'' +
+                ", walkType='" + walkType + '\'' +
                 ", temperature=" + temperature +
                 '}';
     }
